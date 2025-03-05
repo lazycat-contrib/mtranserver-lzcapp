@@ -3,8 +3,10 @@
 ## 模型下载
 + [国内](https://ocn4e4onws23.feishu.cn/drive/folder/C3kffkLr8lxdtid5GYicAcFAnTh)
 + [github](https://github.com/xxnuo/MTranServer/releases/tag/models)
-  小众论坛  https://meta.appinn.net/t/topic/67121/4
-更多模型下载 [github](https://github.com/mozilla/firefox-translations-models)
+
+  小众论坛  https://meta.appinn.net/t/topic/67121
+  
+ 更多模型下载 [github](https://github.com/mozilla/firefox-translations-models)
 
 按需要下载模型后，解压每个语言的压缩包到 models 文件夹内。
 下载了英译中模型的当前文件夹结构示意图：
