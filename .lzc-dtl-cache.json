@@ -1,0 +1,41 @@
+{
+  "name": "MTranServer",
+  "package": "cloud.lazycat.app.mtranserver",
+  "description": "一个超低资源消耗超快的离线翻译服务器",
+  "homepage": "https://github.com/xxnuo/MTranServer",
+  "author": "xxnuo",
+  "app_features": [
+    "background_task",
+    "public_path"
+  ],
+  "subdomain": "mtranserver",
+  "version": "0.0.1",
+  "public_paths": [
+    "/"
+  ],
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yaml",
+  "unsupported_platforms": [
+    "ios",
+    "android"
+  ],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "mtranserver_8989_8989": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_xxnuo_mtranserver_latest": {
+    "originalImage": "xxnuo/mtranserver:latest",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/xxnuo/mtranserver:5a4f245ee63bc830",
+    "timestamp": "2025-03-04T05:04:12.948Z"
+  },
+  "mtranserver_volume_/app/models_action": "emptyDir",
+  "mtranserver_volume_/app/models_location": "app_data",
+  "mtranserver_volume_/app/config.ini_action": "emptyDir",
+  "mtranserver_volume_/app/config.ini_location": "app_data"
+}
