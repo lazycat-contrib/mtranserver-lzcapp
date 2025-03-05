@@ -32,6 +32,12 @@ services:
           cp  /lzcapp/pkg/content/config.ini /app/config/config.ini
       fi
       ln -sf /app/config/config.ini /app/config.ini
+      if [ ! -d /app/models/enzh ];then
+        cp -r /lzcapp/pkg/content/models/enzh /app/models/
+      fi
+      if [ ! -d /app/models/zhen ];then
+        cp -r /lzcapp/pkg/content/models/zhen /app/models/
+      fi
 unsupported_platforms:
   - ios
   - android

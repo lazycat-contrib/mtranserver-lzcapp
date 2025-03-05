@@ -152,12 +152,23 @@
 
         <p>MTranServer 是一个超低资源消耗、超快的离线翻译服务器，支持多种语言的翻译，翻译质量与 Google 翻译相当。</p>
 
-        <p>**当前服务器地址：** <span id="current-url" class="dynamic-url"></span></p>
+        <p>当前服务器地址： <span id="current-url" class="dynamic-url"></span></p>
 
         <h2>API 接口说明</h2>
 
-        <p>注意： 请使用上方动态显示的 <span class="dynamic-url">当前服务器地址来进行api访问</span>。</p>
-
+        <p>注意： 请使用上方动态显示的 <span class="dynamic-url">当前服务器地址</span>来进行api访问。</p>
+        <p>已经默认集成中文-英文 英文-中文模型，如果需要更多模型，请到<a href="https://ocn4e4onws23.feishu.cn/drive/folder/C3kffkLr8lxdtid5GYicAcFAnTh"> 飞书</a>或者<a href="https://github.com/xxnuo/MTranServer/releases/tag/models" >Github</a>下载模型，并放在应用数据下的models目录</p>
+        <p>
+            按需要下载模型后，解压每个语言的压缩包到 models 文件夹内。 下载了英译中模型的当前文件夹结构示意图：
+        </p>
+        <pre><code>
+ models/
+├── enzh
+│   ├── lex.50.50.enzh.s2t.bin
+│   ├── model.enzh.intgemm.alphas.bin
+│   └── vocab.enzh.spm
+        </code>
+        </pre>
         <h3>Token 设置</h3>
         <p>在 MTranServer 中，token 用于保护 API 的安全访问。以下是如何设置和使用 token 的步骤：</p>
 
