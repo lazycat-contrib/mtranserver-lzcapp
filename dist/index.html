@@ -224,7 +224,36 @@ Authorization: your_secret_token
                 </tr>
             </tbody>
         </table>
+        <h3>翻译插件配置说明</h3>
 
+        <h4>沉浸式翻译设置步骤：</h4>
+        <ol>
+            <li>进入插件设置页面</li>
+            <li>在开发者模式中启用Beta特性</li>
+            <li>找到<code>翻译服务</code> → <code>自定义API设置</code></li>
+            <li>配置参数建议：
+                <ul>
+                    <li>每秒最大请求数：设置为 <code>5000</code>（根据服务器性能调整）</li>
+                    <li>每次请求最大段落数：建议设置为 <code>10</code></li>
+                </ul>
+            </li>
+            <li>保存设置后即可体验高速翻译</li>
+        </ol>
+
+        <h4>简约翻译设置步骤：</h4>
+        <ol>
+            <li>进入插件设置页面</li>
+            <li>找到<code>接口设置</code> → <code>Custom</code></li>
+            <li>配置参数建议：
+                <ul>
+                    <li>最大请求并发数量：建议 <code>100</code></li>
+                    <li>每次请求间隔时间：设置为 <code>1</code> 毫秒</li>
+                </ul>
+            </li>
+            <li>在<code>KEY</code>字段填入您的token（如果使用有密码接口）</li>
+            <li>保存配置即可开始使用</li>
+        </ol>
+        <p><strong>注意：</strong>以上数值基于标准服务器配置，请根据实际硬件性能调整参数。建议从较低数值开始测试，逐步增加至最优性能。</p>
         <h3>开发者接口</h3>
         <p>Base URL: <code class="api-url">http://localhost:8989</code></p>
         <table>
