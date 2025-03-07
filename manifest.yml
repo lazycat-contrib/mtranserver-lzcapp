@@ -21,6 +21,7 @@ application:
   routes:
     - /=http://mtranserver.cloud.lazycat.app.mtranserver.lzcapp:8989/
     - /help=file:///lzcapp/pkg/content/
+    - /playground=file:///lzcapp/pkg/content/playground.html
 services:
   mtranserver:
     image: registry.lazycat.cloud/czyt/xxnuo/mtranserver:44d25da7c86dff02
