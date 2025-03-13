@@ -1,7 +1,7 @@
 lzc-sdk-version: "0.1"
 name: MTranServer
 package: cloud.lazycat.app.mtranserver
-version: 1.0.4
+version: 1.1.1
 description: 一个超低资源消耗超快的离线翻译服务器
 homepage: https://github.com/xxnuo/MTranServer
 usage: "请在浏览器打开应用，通过程序域名+/help获取使用帮助"
@@ -24,7 +24,7 @@ application:
     - /playground=file:///lzcapp/pkg/content/playground.html
 services:
   mtranserver:
-    image: registry.lazycat.cloud/czyt/xxnuo/mtranserver:44d25da7c86dff02
+    image: docker.hlmirror.com/xxnuo/mtranserver:1.1.1
     binds:
       - /lzcapp/var/config:/app/config
       - /lzcapp/var/models:/app/models
