@@ -1,0 +1,34 @@
+application:
+  subdomain: mtranserver
+  background_task: true
+  multi_instance: false
+  handlers:
+    error_page_templates:
+      404: /lzcapp/pkg/content/errors/404.html.tpl
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://mtranserver:8989/
+    - location: /help
+      backend: file:///lzcapp/pkg/content/
+    - location: /playground
+      backend: file:///lzcapp/pkg/content/playground.html
+services:
+  mtranserver:
+    # upstream: xxnuo/mtranserver:2.1.1
+    image: xxnuo/mtranserver:2.1.1
+    binds:
+      - /lzcapp/var/config:/app/config
+      - /lzcapp/var/models:/app/models
+    setup_script: |
+      if [ -z "$(find /app/config/config.ini -mindepth 1 -maxdepth 1)" ]; then
+          cp  /lzcapp/pkg/content/config.ini /app/config/config.ini
+      fi
+      ln -sf /app/config/config.ini /app/config.ini
+      if [ ! -d /app/models/enzh ];then
+        cp -r /lzcapp/pkg/content/models/enzh /app/models/
+      fi
+      if [ ! -d /app/models/zhen ];then
+        cp -r /lzcapp/pkg/content/models/zhen /app/models/
+      fi

@@ -1,0 +1,17 @@
+package: cloud.lazycat.app.mtranserver
+version: 2.1.1
+name: MTranServer
+description: "一个超低资源消耗超快的离线翻译服务器"
+min_os_version: "1.5.0"
+homepage: https://github.com/xxnuo/MTranServer
+author: xxnuo
+unsupported_platforms:
+  - ios
+  - android
+locales:
+  zh:
+    description: "一个超低资源消耗超快的离线翻译服务器"
+    name: MTranServer
+  en:
+    description: "An ultra-low-resource, high-speed offline translation server"
+    name: MTranServer

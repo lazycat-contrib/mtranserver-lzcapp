@@ -1,0 +1,39 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/mtranserver.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: mtranserver
+build:
+  run_buildscript: false
+images:
+  # 主应用：上游 docker hub 有 1.x/2.x/3.x/4.x 多家族，当前发布基线 2.1.1，锁定 2.x 补丁家族
+  - id: mtranserver
+    target: service
+    service: mtranserver
+    source: xxnuo/mtranserver
+    channel: stable
+    sort: semver
+    tag_regex: '^2\.\d+\.\d+$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: MTranServer
+    summary: "一个超低资源消耗超快的离线翻译服务器"
