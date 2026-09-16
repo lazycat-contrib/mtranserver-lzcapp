@@ -17,7 +17,7 @@ application:
 services:
   mtranserver:
     # upstream: xxnuo/mtranserver:2.1.1
-    image: xxnuo/mtranserver:2.1.1
+    image: registry.lazycat.cloud/czyt/xxnuo/mtranserver:89bae9930ce2ebf5
     binds:
       - /lzcapp/var/config:/app/config
       - /lzcapp/var/models:/app/models
